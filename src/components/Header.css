@@ -1,0 +1,67 @@
+/* 헤더 전체 */
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 100px;
+  height: 72px;
+  background: var(--color-background-basic-1, #ffffff);
+  border-bottom: 1px solid var(--color-border-basic-1, #ececec);
+}
+
+/* 왼쪽 묶음: 로고 + 메뉴 */
+.header__left {
+  display: flex;
+  align-items: center;
+  gap: 80px; /* 로고와 메뉴 사이 간격 */
+}
+
+/* 로고 */
+.logo-img {
+  height: 22px;
+}
+
+/* 메뉴 */
+.header__center {
+  display: flex;
+  gap: var(--spacing-48px, 48px);
+}
+
+.header__center a:hover {
+  color: var(--color-color-brandcolor, #E60023);
+}
+
+
+.header__center a {
+  color: var(--color-content-grey-3, #767676);
+  text-decoration: none;
+  font-family: 'Pretendard', sans-serif;
+}
+
+/* 오른쪽: 검색창 + GitHub 아이콘 */
+.header__right {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-48px, 48px);
+}
+
+.search-box {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #f9f9f9;
+  height: 48px;
+  width: 254px;
+  border-radius: var(--radius-full, 9999px);
+}
+
+.search-icon {
+  height: 23px;
+  margin-left: 206px;
+  cursor: pointer;
+}
+
+.icon-img {
+  height: 32px;
+  cursor: pointer;
+}

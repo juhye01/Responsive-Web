@@ -1,23 +1,17 @@
-import logo from './logo.svg';
+// src/App.js
+import React from 'react';
+import Header from './components/Header';
 import './App.css';
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Header />
+      {/* 아래는 메인 콘텐츠 영역입니다. 필요에 따라 추가하세요 */}
+      <main>
+        <h2>Welcome to brewin!</h2>
+        <p>This is your starting point 🚀</p>
+      </main>
     </div>
   );
 }
