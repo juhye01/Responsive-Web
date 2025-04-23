@@ -18,7 +18,8 @@
 
 /* 로고 */
 .logo-img {
-  height: 22px;
+  height: 24px;
+  cursor: pointer;
 }
 
 /* 메뉴 */
@@ -28,7 +29,7 @@
 }
 
 .header__center a:hover {
-  color: var(--color-color-brandcolor, #E60023);
+  color: var(--color-brandcolor, #E60023);
 }
 
 
@@ -50,14 +51,14 @@
   align-items: center;
   justify-content: center;
   background: #f9f9f9;
-  height: 48px;
+  height: 40px;
   width: 254px;
   border-radius: var(--radius-full, 9999px);
 }
 
 .search-icon {
-  height: 23px;
-  margin-left: 206px;
+  height: 20px;
+  margin-left: 190px;
   cursor: pointer;
 }
 

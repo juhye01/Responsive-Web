@@ -1,0 +1,455 @@
+/*============================================================
+=                          기본 레이아웃                           =
+============================================================*/
+.hero {
+  position: relative;
+  display: flex;
+  aspect-ratio: 1920 / 791;
+  width: 100%;
+  max-height: 100vh;
+  background: transparent;
+  padding: clamp(100px, 16.6vw, 320px);
+  align-items: center;
+  overflow: visible;
+  pointer-events: none;
+}
+
+.hero__text-block {
+  position: absolute;
+  top: 18%;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--spacing-24px, 24px);
+  min-width: 453px;
+  pointer-events: none;
+}
+
+.hero__body-group {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-96px, 96px);
+}
+
+/*============================================================
+=                             버튼 애니메이션                          =
+============================================================*/
+.hero__button-icon {
+  width: 32px;
+  height: 32px;
+  object-fit: contain;
+  margin-left: 4px;
+  animation: bounce-arrow 1.2s ease-in-out infinite;
+  vertical-align: middle;
+}
+
+@keyframes bounce-arrow {
+  0%   { transform: translateX(0); }
+  50%  { transform: translateX(5px); }
+  100% { transform: translateX(0); }
+}
+
+/*============================================================
+=                         이미지 영역 설정                          =
+============================================================*/
+.hero__image-area {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+  pointer-events: none;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  overflow: visible;
+  perspective: 1000px; /* ✅ 원근감 추가 */
+}
+
+.ball-wrapper {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  pointer-events: none;
+  height: 500px;
+  overflow: visible;
+  pointer-events: auto;
+}
+
+.ball {
+  position: relative;
+  z-index: 2;
+  display: block;
+  border-radius: 50%;
+  background: radial-gradient(circle at 30% 30%, #fff, #eaeaea);
+  pointer-events: auto;
+  transform-style: preserve-3d; /* ✅ 회전을 3D로 표현 */
+}
+
+.ball-and-shadow {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* 그림자 */
+.ball-shadow {
+  position: absolute;
+  transform: translateX(-50%);
+  width: 60%;
+  height: 14px;
+  background: rgba(0, 0, 0, 0.1);
+  filter: blur(8px);
+  z-index: 1; /* 공보다 아래 */
+  opacity: 0.4;
+}
+
+
+
+/*============================================================
+=                          공 01 애니메이션                          =
+============================================================*/
+.ball-wrapper--1 {
+  left: 32%;
+  top: -300px;
+  animation:
+    drop-ball01 0.5s ease-in forwards,
+    move-ball01 1.8s ease-out forwards;
+  animation-delay: 0s, 0.5s;
+}
+
+.ball--1 {
+  width: 230px;
+  height: 230px;
+  animation: rotate-ball01 1.8s ease-out forwards;
+  animation-delay: 0.5s;
+  opacity: 0.6;
+}
+
+.ball-shadow--1 {
+  width: 60%;
+  top: 230px;
+  background: rgba(0, 0, 0, 0);
+  animation: shadow-ball01 2.4s ease-out forwards;
+  opacity: 0.4;
+}
+
+@keyframes drop-ball01 {
+  0%   { top: -300px; filter: brightness(1); }
+  60%  { top: 300px; }
+  70%  { top: 250px; }
+  80%  { top: 300px; }
+  90%  { top: 280px; }
+  100% { top: 300px; }
+}
+
+@keyframes move-ball01 {
+  0%   { transform: translateX(10px); }
+  50%  { transform: translateX(110px); }
+  75%  { transform: translateX(90px); }
+  90%  { transform: translateX(100px); }
+  100% { transform: translateX(95px); }
+}
+
+@keyframes rotate-ball01 {
+  0%   { rotate: 0deg; }
+  50%  { rotate: 15deg; }
+  75%  { rotate: 0deg; }
+  90%  { rotate: -5deg; }
+  100% { rotate: 0deg; }
+}
+
+@keyframes shadow-ball01 {
+  0%   { background: rgba(0, 0, 0, 0); width: 50%; transform: translateX(30px); }
+  50%  { background: rgba(0, 0, 0, 0.1); width: 60%; transform: translateX(30px); }
+  75%  { background: rgba(0, 0, 0, 0.1); width: 50%; transform: translateX(30px); }
+  90%  { background: rgba(0, 0, 0, 0.1); width: 63%; transform: translateX(30px); }
+  100% { background: rgba(0, 0, 0, 0.1); width: 60%; transform: translateX(30px); }
+}
+
+
+/*============================================================
+=                          공 02 애니메이션                          =
+============================================================*/
+.ball-wrapper--2 {
+  left: 47%;
+  top: -300px;
+  animation:
+    drop-ball02 0.6s ease-in forwards 0.2s,
+    move-ball02 6s ease-out forwards 0.8s;     
+}
+
+.ball--2 {
+  width: 160px;
+  height: 160px;
+  animation: rotate-ball02 2s ease-out forwards;
+  animation-delay: 1.5s;
+}
+
+.ball-shadow--2 {
+  width: 50%;
+  background: rgba(0, 0, 0, 0);
+  margin-top: 154px; /* 위치 살짝 위로 올림 */
+  animation: shadow-ball02 3s ease-in-out forwards;
+  opacity: 0.6;
+}
+
+@keyframes drop-ball02 {
+  0%   { top: -300px; filter: brightness(1); }
+  60%  { top: 480px; }
+  70%  { top: 450px; }
+  80%  { top: 480px; }
+  90%  { top: 470px; }
+  100% { top: 480px; }
+}
+
+@keyframes move-ball02 {
+  0%   { transform: translateX(0px); }
+  30%  { transform: translateX(340px); }
+  70%  { transform: translateX(320px); }
+  100% { transform: translateX(340px); }
+}
+
+@keyframes rotate-ball02 {
+  0%   { rotate: 0deg; }
+  40%  { rotate: -8deg; }
+  80%  { rotate: 12deg; }
+  100% { rotate: 5deg; }
+}
+
+@keyframes shadow-ball02 {
+  0%   { background: rgba(0, 0, 0, 0); width: 40%; transform: translateX(10px); }
+  50%  { background: rgba(0, 0, 0, 0.08); width: 70%; transform: translateX(25px); }
+  100% { background: rgba(0, 0, 0, 0.1); width: 50%; transform: translateX(20px); }
+}
+
+
+/*============================================================
+=                          공 03 애니메이션                          =
+============================================================*/
+.ball-wrapper--3 {
+  left: 50%;
+  top: -300px;
+  animation:
+    drop-ball03 0.6s ease-in forwards 0.4s,
+    move-ball03 6s ease-out forwards 1s;     
+}
+
+.ball--3 {
+  width: 110px;
+  height: 110px;
+  animation: rotate-ball03 2s ease-out forwards;
+  animation-delay: 1.5s;
+}
+
+.ball-shadow--3 {
+  width: 50%;
+  background: rgba(0, 0, 0, 0);
+  margin-top: 100px; /* 위치 살짝 위로 올림 */
+  animation: shadow-ball03 3s ease-in-out forwards;
+  opacity: 0.6;
+}
+
+@keyframes drop-ball03 {
+  0%   { top: -300px; filter: brightness(1); }
+  60%  { top: 220px; }
+  70%  { top: 200px; }
+  80%  { top: 220px; }
+  90%  { top: 210px; }
+  100% { top: 220px; }
+}
+
+@keyframes move-ball03 {
+  0%   { transform: translateX(0px); }
+  30%  { transform: translateX(130px); }
+  70%  { transform: translateX(120px); }
+  100% { transform: translateX(130px); }
+}
+
+@keyframes rotate-ball03 {
+  0%   { rotate: 0deg; }
+  40%  { rotate: -8deg; }
+  80%  { rotate: 12deg; }
+  100% { rotate: 5deg; }
+}
+
+@keyframes shadow-ball03 {
+  0%   { background: rgba(0, 0, 0, 0); width: 40%; transform: translateX(10px); }
+  50%  { background: rgba(0, 0, 0, 0.08); width: 70%; transform: translateX(25px); }
+  100% { background: rgba(0, 0, 0, 0.1); width: 50%; transform: translateX(20px); }
+}
+
+
+
+/*============================================================
+=                          타원 이미지 애니메이션                    =
+============================================================*/
+.circle-image {
+  position: absolute;
+  z-index: 10;
+  pointer-events: none;
+}
+
+.red-circle {
+  top: -20px;
+  left: 34%;
+  animation: float-glass 3.2s ease-in-out infinite;
+  pointer-events: none;
+}
+
+.white-circle {
+  top: 100px;
+  left: 45%;
+  animation: float-white 4.1s ease-in-out infinite;
+  pointer-events: none;
+}
+@keyframes float-red {
+  0%   { transform: translateY(0px) rotate(0deg); }
+  50%  { transform: translateY(-24px) rotate(0deg); }
+  100% { transform: translateY(0px) rotate(0deg); }
+}
+
+@keyframes float-white {
+  0%   { transform: translateY(-34px) translateX(0px) rotate(0deg); }
+  50%  { transform: translateY(0px) translateX(8px) rotate(0deg); }
+  100% { transform: translateY(-34px) translateX(0px) rotate(0deg); }
+}
+
+
+/*============================================================
+=                          타원 그림자 애니메이션                    =
+============================================================*/
+.circle-shadow {
+  position: absolute;
+  width: 4%;
+  height: 14px;
+  border-radius: 50%;
+  transform: scale(1);
+  filter: blur(8px);
+  z-index: -1;
+  pointer-events: none;
+}
+
+.circle-shadow--red {
+  top: 650px;
+  left: 50%;
+  background: rgba(18, 18, 18, 0.2);
+  animation: shadow-pulse-red 3.2s ease-in-out infinite;
+}
+
+.circle-shadow--white {
+  top: 730px;
+  left: 55%;
+  background: rgba(0, 0, 0, 0.5);
+  animation: shadow-pulse-white 4.1s ease-in-out infinite;
+}
+
+@keyframes shadow-pulse-red {
+  0%   { transform: scale(1.3); opacity: 0.2; }
+  50%  { transform: scale(1); opacity: 0.25; }
+  100% { transform: scale(1.3); opacity: 0.2; }
+}
+
+@keyframes shadow-pulse-white {
+  0%   { transform: scale(1); opacity: 0.1; }
+  50%  { transform: scale(1.2); opacity: 0.15; }
+  100% { transform: scale(1); opacity: 0.1; }
+}
+
+
+/*============================================================
+=                          반구 이미지 애니메이션                    =
+============================================================*/
+
+.circle-wrapper--hemisphere {
+  position: absolute;
+  top: 608px;
+  left: 47%;
+  pointer-events: none;
+  z-index: 11;
+  filter: brightness(1.008);
+}
+
+.hemisphere {
+  pointer-events: none;
+  animation: swing 3s ease-in-out infinite;
+  transform-origin: center bottom; /* ✅ 여기로 옮겨야 작동해! */
+}
+
+@keyframes swing {
+  0%   { transform: rotate(6deg); }
+  50%  { transform: rotate(-6deg); }
+  100% { transform: rotate(6deg); }
+}
+
+/*============================================================
+=                          반구 그림자 애니메이션                    =
+============================================================*/
+
+.circle-shadow--hemisphere {
+  position: absolute;
+  top: 740px;             /* hemisphere 이미지보다 살짝 아래 */
+  left: 50%;
+  width: 90px;
+  height: 16 px;
+  border-radius: 50%;
+  background: rgba(0, 0, 0, 0.6); /* 살짝 더 진하게도 가능 */
+  filter: blur(8px);
+  z-index: 0;
+  pointer-events: none;
+  transform-origin: left center; /* 시작은 왼쪽 기준 */
+  animation: shadow-pulse-hemisphere 3s ease-in-out infinite;
+}
+
+
+
+@keyframes shadow-pulse-hemisphere {
+  0%   {
+    transform-origin: left center;
+    transform: scaleX(1.3);
+    opacity: 0.15;
+  }
+  50%  {
+    transform-origin: right center;
+    transform: scaleX(1.3);
+    opacity: 0.15;
+  }
+  100% {
+    transform-origin: left center;
+    transform: scaleX(1.3);
+    opacity: 0.15;
+  }
+}
+
+
+
+/*============================================================
+=                          글래스 모피즘                    =
+============================================================*/
+
+.glass-ellipse {
+  position: absolute;
+  top: 120px;
+  left: 39.5%;
+  width: 430px;
+  height: 490px;
+  rotate: -30deg;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 50% / 50%;
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  z-index: 8;
+  pointer-events: none;
+  transform: rotate(60deg);
+  animation: float-glass 3.2s ease-in-out infinite;
+}
+
+@keyframes float-glass {
+  0%   { transform: translateY(-34px) rotate(0deg); }
+  50%  { transform: translateY(0px) rotate(0deg); }
+  100% { transform: translateY(-34px) rotate(0deg); }
+}

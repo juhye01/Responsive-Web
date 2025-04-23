@@ -7,7 +7,7 @@ const Header = () => {
     <header className="header">
       {/* 왼쪽 묶음: 로고 + 메뉴 */}
       <div className="header__left">
-        <img src="/img/logo_img.png" alt="brewin logo" className="logo-img" />
+        <img src="/img/logo_img.svg" alt="brewin logo" className="logo-img" />
         <nav className="header__center">
           <a href="#" className="text-heading-5">Docs</a>
           <a href="#" className="text-heading-5">API</a>
@@ -18,9 +18,9 @@ const Header = () => {
       {/* 오른쪽: 검색창 + GitHub 아이콘 */}
       <div className="header__right">
         <div className="search-box">
-          <img src="/img/search_icon.png" alt="search" className="search-icon" />
+          <img src="/img/search_icon.svg" alt="search" className="search-icon" />
         </div>
-        <img src="/img/github_icon.png" alt="GitHub" className="icon-img" />
+        <img src="/img/github_icon.svg" alt="GitHub" className="icon-img" />
       </div>
     </header>
   );
