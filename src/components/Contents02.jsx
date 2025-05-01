@@ -4,21 +4,22 @@ import './Contents02.css';
 const items = [
   {
     text: '흩어진 디자인 JSON, 한 번에 정리',
-    img: '/img/contents_card01.svg',
+    img: `${process.env.PUBLIC_URL}/img/contents_card01.svg`,
   },
   {
     text: 'Chakra 스타일 코드 자동 완성',
-    img: '/img/contents_card02.svg',
+    img: `${process.env.PUBLIC_URL}/img/contents_card02.svg`,
   },
   {
     text: 'Swagger 문서만 있다면, 타입까지 갖춘 코드 자동 생성',
-    img: '/img/contents_card03.svg',
+    img: `${process.env.PUBLIC_URL}/img/contents_card03.svg`,
   },
   {
     text: 'SVG 아이콘 변환을 한 번에',
-    img: '/img/contents_card04.svg',
+    img: `${process.env.PUBLIC_URL}/img/contents_card04.svg`,
   },
 ];
+
 
 const Contents02 = () => {
   const [activeIndex, setActiveIndex] = useState(0);

@@ -29,20 +29,17 @@ const HeroSection = () => {
     const ball = ballRefs[id].current;
     const shadow = shadowRefs[id].current;
 
-if (ball) {
-  ball.style.transition = 'transform 1s ease-out';
-  ball.style.transform = `translateX(${translateX}px) rotateZ(${rotateDeg}deg)`;
-}
+    if (ball) {
+      ball.style.transition = 'transform 1s ease-out';
+      ball.style.transform = `translateX(${translateX}px) rotateZ(${rotateDeg}deg)`;
+    }
 
-if (shadow) {
-  shadow.style.animation = 'none';
-  void shadow.offsetHeight; // 리플로우
-
-  shadow.style.transition = 'transform 1s ease-out';
-  shadow.style.transform = `translateX(${translateX}px)`; // ✅ X만 이동
-}
-
-    
+    if (shadow) {
+      shadow.style.animation = 'none';
+      void shadow.offsetHeight;
+      shadow.style.transition = 'transform 1s ease-out';
+      shadow.style.transform = `translateX(${translateX}px)`;
+    }
   };
 
   useEffect(() => {
@@ -93,17 +90,29 @@ if (shadow) {
 
         <div className="circle-wrapper circle-wrapper--red">
           <div className="circle-shadow circle-shadow--red"></div>
-          <img src="/img/red_circle.svg" alt="Red Circle" className="circle-image red-circle" />
+          <img
+            src={`${process.env.PUBLIC_URL}/img/red_circle.svg`}
+            alt="Red Circle"
+            className="circle-image red-circle"
+          />
         </div>
 
         <div className="circle-wrapper circle-wrapper--white">
           <div className="circle-shadow circle-shadow--white"></div>
-          <img src="/img/white_circle.svg" alt="White Circle" className="circle-image white-circle" />
+          <img
+            src={`${process.env.PUBLIC_URL}/img/white_circle.svg`}
+            alt="White Circle"
+            className="circle-image white-circle"
+          />
         </div>
 
         <div className="circle-shadow circle-shadow--hemisphere"></div>
         <div className="circle-wrapper circle-wrapper--hemisphere">
-          <img src="/img/hemisphere.svg" alt="Hemisphere" className="circle-image hemisphere" />
+          <img
+            src={`${process.env.PUBLIC_URL}/img/hemisphere.svg`}
+            alt="Hemisphere"
+            className="circle-image hemisphere"
+          />
         </div>
 
         <div className="glass-ellipse"></div>
@@ -118,7 +127,11 @@ if (shadow) {
           </p>
           <button className="button">
             시작하기
-            <img src="/img/next.svg" alt="arrow" className="hero__button-icon" />
+            <img
+              src={`${process.env.PUBLIC_URL}/img/next.svg`}
+              alt="arrow"
+              className="hero__button-icon"
+            />
           </button>
         </div>
       </div>

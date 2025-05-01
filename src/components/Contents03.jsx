@@ -13,12 +13,12 @@ const Contents03 = () => {
           if (entry.isIntersecting) {
             entry.target.classList.add('visible');
           } else {
-            entry.target.classList.remove('visible'); // 다시 내려갔다 올라오면 재등장
+            entry.target.classList.remove('visible');
           }
         });
       },
       {
-        threshold: 0.3, // 30%만 보여도 등장
+        threshold: 0.3,
       }
     );
 
@@ -45,10 +45,18 @@ const Contents03 = () => {
             </p>
             <a href="#" className="text-body-2 content-color-brand">
               로그인 바로 사용하기
-              <img className="box__link-icon" src="/img/arrow_right.svg" alt="화살표 아이콘" />
+              <img
+                className="box__link-icon"
+                src={`${process.env.PUBLIC_URL}/img/arrow_right.svg`}
+                alt="화살표 아이콘"
+              />
             </a>
           </div>
-          <img className="contents03__image" src="/img/login_img.svg" alt="소셜 로그인 UI 이미지" />
+          <img
+            className="contents03__image"
+            src={`${process.env.PUBLIC_URL}/img/login_img.svg`}
+            alt="소셜 로그인 UI 이미지"
+          />
         </div>
 
         {/* 결제, 지도 모듈 박스 */}
@@ -61,10 +69,18 @@ const Contents03 = () => {
             </p>
             <a href="#" className="text-body-2 content-color-brand">
               결제, 지도 모듈 사용하기
-              <img className="box__link-icon" src="/img/arrow_right.svg" alt="화살표 아이콘" />
+              <img
+                className="box__link-icon"
+                src={`${process.env.PUBLIC_URL}/img/arrow_right.svg`}
+                alt="화살표 아이콘"
+              />
             </a>
           </div>
-          <img className="contents03__image" src="/img/map_img.svg" alt="결제 및 지도 UI 이미지" />
+          <img
+            className="contents03__image"
+            src={`${process.env.PUBLIC_URL}/img/map_img.svg`}
+            alt="결제 및 지도 UI 이미지"
+          />
         </div>
       </div>
     </section>

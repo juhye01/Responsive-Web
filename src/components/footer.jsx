@@ -7,12 +7,27 @@ const Footer = () => {
       <div className="footer__inner">
         {/* 왼쪽 묶음 */}
         <div className="footer__left">
-          <img src="/img/logo_black.svg" alt="brewin logo" className="footer__logo" />
-          <p className="text-body-6 content-color-grey-6">Copyright ©2025 brewin”, Inc.</p>
+          <img
+            src={`${process.env.PUBLIC_URL}/img/logo_black.svg`}
+            alt="brewin logo"
+            className="footer__logo"
+          />
+          <p className="text-body-6 content-color-grey-6">
+            Copyright ©2025 brewin”, Inc.
+          </p>
           <div className="footer__icons">
-            <img src="/img/github_black.svg" alt="GitHub" />
-            <img src="/img/linkedin_black.svg" alt="LinkedIn" />
-            <img src="/img/internet_black.svg" alt="Website" />
+            <img
+              src={`${process.env.PUBLIC_URL}/img/github_black.svg`}
+              alt="GitHub"
+            />
+            <img
+              src={`${process.env.PUBLIC_URL}/img/linkedin_black.svg`}
+              alt="LinkedIn"
+            />
+            <img
+              src={`${process.env.PUBLIC_URL}/img/internet_black.svg`}
+              alt="Website"
+            />
           </div>
         </div>
 

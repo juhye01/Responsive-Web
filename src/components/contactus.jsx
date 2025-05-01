@@ -5,7 +5,11 @@ const ContactUs = () => {
   return (
     <section className="contactus-section">
       {/* ✅ 백그라운드 이미지 */}
-      <img src="/img/contactus.svg" alt="Contact Us Background" className="contactus-bg" />
+      <img
+        src={`${process.env.PUBLIC_URL}/img/contactus.svg`}
+        alt="Contact Us Background"
+        className="contactus-bg"
+      />
 
       {/* ✅ 텍스트 + 버튼 그룹 */}
       <div className="contactus-content">
@@ -24,7 +28,11 @@ const ContactUs = () => {
         {/* ✅ 오른쪽 끝 고정 버튼 */}
         <button className="button contactus-button">
           시작하기
-          <img src="/img/next.svg" alt="arrow" className="hero__button-icon" />
+          <img
+            src={`${process.env.PUBLIC_URL}/img/next.svg`}
+            alt="arrow"
+            className="hero__button-icon"
+          />
         </button>
       </div>
     </section>
