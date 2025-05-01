@@ -2,7 +2,7 @@
   "name": "brewin-app",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://juhye01.github.io/brewin_jj05",
+  "homepage": "https://juhye01.github.io/Responsive-Web",
   "dependencies": {
     "@testing-library/dom": "^10.4.0",
     "@testing-library/jest-dom": "^6.6.3",
