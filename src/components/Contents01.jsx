@@ -11,8 +11,8 @@ const Contents01 = () => {
         const video = entry.target.querySelector('video');
         if (entry.isIntersecting && video) {
           entry.target.classList.add('visible');
-          video.currentTime = 0; // 항상 처음부터
-          video.play(); // 직접 재생
+          video.currentTime = 0;
+          // video.play(); // 🔴 이 줄은 제거해야 자동재생 문제 없음
         }
       });
     }, {
@@ -20,7 +20,6 @@ const Contents01 = () => {
     });
 
     boxes.forEach((box) => observer.observe(box));
-
     return () => observer.disconnect();
   }, []);
 
@@ -38,9 +37,11 @@ const Contents01 = () => {
 
       <div className="code-compare">
         <div className="code-box box01">
+          <p className="code-box-label text-body-2">타사 코드</p>
           <CodeVideo02 />
         </div>
         <div className="code-box box02">
+          <p className="code-box-label text-body-6 content-color-grey-5">brewin 코드</p>
           <CodeVideo />
         </div>
       </div>
