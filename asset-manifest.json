@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/brewin_jj05/static/css/main.357234fe.css",
+    "main.js": "/brewin_jj05/static/js/main.5fca7617.js",
+    "index.html": "/brewin_jj05/index.html",
+    "main.357234fe.css.map": "/brewin_jj05/static/css/main.357234fe.css.map",
+    "main.5fca7617.js.map": "/brewin_jj05/static/js/main.5fca7617.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.357234fe.css",
+    "static/js/main.5fca7617.js"
+  ]
+}
