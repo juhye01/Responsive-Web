@@ -1,0 +1,156 @@
+/*============================================================
+=               Contents02 전체 섹션 기본 설정                 =
+============================================================*/
+.contents02 {
+  display: flex;
+  flex-direction: column;
+  gap: var(--gap-96px, 96px);
+  padding: 160px clamp(100px, 16.6vw, 320px) 160px;
+  background-color: var(--color-brandcolor-2, #f9f9f9);
+  text-align: left;
+  box-sizing: border-box;
+}
+
+.contents02__title {
+  font-weight: bold;
+  margin-bottom: 0;
+}
+
+
+/*============================================================
+=                텍스트 + 이미지 그룹 정렬                    =
+============================================================*/
+.contents02__inner {
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  gap: var(--gap-48, 48px);
+  flex-wrap: wrap;
+  max-width: 1480px;
+  box-sizing: border-box;
+}
+
+
+/*============================================================
+=                    텍스트 설명 영역                         =
+============================================================*/
+.contents02-text {
+  flex: 1;
+  min-width: 300px;
+  text-align: left;
+}
+
+.contents02-list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--gap-48, 48px);
+}
+
+
+/*============================================================
+=                  각 텍스트 항목 아이템                      =
+============================================================*/
+.contents02-item {
+  position: relative;
+  cursor: pointer;
+}
+
+.progress-wrapper {
+  width: 80%;
+  height: 8px;
+  margin-bottom: 12px;
+  position: relative;
+}
+
+.progress-background {
+  width: 100%;
+  height: 8px;
+  background-color: #f4f4f5;
+  border-radius: 9999px;
+}
+
+.progress-line {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 8px;
+  width: 0%;
+  background-color: var(--color-brandcolor, #E60023);
+  border-radius: 9999px;
+}
+
+.progress-line.animate {
+  animation: fill-bar 5s linear forwards;
+}
+
+@keyframes fill-bar {
+  0% { width: 0%; }
+  100% { width: 100%; }
+}
+
+.contents02-item.disabled p {
+  color: var(--content-color-grey-5, #b0b0b0);
+  font-weight: 500;
+}
+
+.contents02-item.active p {
+  color: var(--content-color-grey-1, #1d1d1d);
+}
+
+
+/*============================================================
+=                      이미지 영역 설정                       =
+============================================================*/
+.contents02-image {
+  flex: 1;
+  min-width: 300px;
+  max-width: 640px;
+  height: auto;
+  position: relative;
+  display: flex;
+  justify-content: flex-end; /* ✅ 항상 오른쪽 정렬 */
+  align-items: flex-start;
+}
+
+.contents02-card-img {
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+  position: absolute; /* ✅ 겹쳐놓고 위치 고정 */
+  top: 0;
+  right: 0;
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+  border-radius: 16px;
+  pointer-events: none;
+}
+
+.contents02-card-img.visible {
+  opacity: 1;
+  transform: translateY(0);
+  z-index: 1;
+  pointer-events: auto;
+}
+
+
+
+/*============================================================
+=                    반응형 (모바일 대응)                     =
+============================================================*/
+@media (max-width: 900px) {
+  .contents02__inner {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .contents02-text,
+  .contents02-image {
+    max-width: 100%;
+    text-align: center;
+  }
+
+  .progress-wrapper {
+    width: 100%;
+  }
+}

@@ -1,0 +1,215 @@
+/* ===========================================
+=                   전체 섹션 설정                    =
+=========================================== */
+.reviews02-section {
+  padding: 0px clamp(100px, 16.6vw, 320px) 160px;
+  text-align: left;
+  position: relative;
+}
+
+.review-card,
+.review-company,
+.review-name,
+.review-rating,
+.review-text {
+  user-select: none; /* ✅ 텍스트 선택 방지 */
+}
+
+
+/* ===========================================
+=              타이틀 + 버튼 정렬 설정             =
+=========================================== */
+.reviews02-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: var(--gap-96px, 96px);
+  user-select: none;
+}
+
+.reviews02-buttons {
+  display: flex;
+  gap: 36px;
+}
+
+/* ===========================================
+=                   슬라이더 설정                     =
+=========================================== */
+.reviews02-slider {
+  display: flex;
+  overflow-x: scroll;
+  scroll-behavior: smooth;
+  gap: 16px;
+  padding: 20px 0;
+  scrollbar-width: none;
+}
+
+.reviews02-slider::-webkit-scrollbar {
+  display: none;
+}
+
+/* ===========================================
+=                카드 (후기) 스타일                  =
+=========================================== */
+.review-card {
+  position: relative;
+  flex: 0 0 auto;
+  width: 400px;
+  height: 180px; /* ✅ 높이 고정 */
+  background: #fff;
+  border: 0.6px solid #f5f5f5;
+  border-radius: 8px;
+  padding: 24px;
+  box-shadow: 4px 4px 6px rgba(0, 0, 0, 0.02);
+  transition: transform 0.3s ease;
+  text-align: left;
+}
+
+.review-card:hover {
+  transform: translateY(-4px);
+}
+
+/* ✅ 내용 전체를 감싸는 Wrapper */
+.review-content-wrapper {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+  width: 100%;
+  padding: 0 40px;
+  box-sizing: border-box;
+}
+
+/* 회사명 */
+.review-company {
+  font-size: 14px;
+  color: var(--content-color-grey-3, #999);
+  margin-bottom: 8px;
+}
+
+/* 이름 + 별점 묶음 */
+.review-name-rating {
+  display: flex;
+  align-items: center;
+  gap: 32px;
+  margin-bottom: 24px;
+}
+
+/* 이름 */
+.review-name {
+  font-size: 24px;
+  font-weight: 600;
+  line-height: 1;
+  letter-spacing: -0.01em;
+  margin: 0;
+}
+
+/* 별점 */
+.review-rating {
+  display: flex;
+  align-items: center;
+}
+
+.review-rating span {
+  font-size: 20px;
+  line-height: 1;
+  position: relative;
+  top: 1px;
+}
+
+/* 후기 텍스트 */
+.review-text {
+  font-size: 16px;
+  color: var(--content-color-grey-3, #666);
+  line-height: 1.4;
+  margin: 0;
+}
+
+/* ===========================================
+=                 버튼(화살표) 스타일                  =
+=========================================== */
+/* 버튼 기본 스타일 */
+.slider-btn {
+  width: 46px;
+  height: 46px;
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* 동그란 버튼 테두리 */
+.arrow-wrapper {
+  width: 46px;
+  height: 46px;
+  border: 2px solid #8F8F8F; /* 기본 테두리 색 */
+  border-radius: 50%; /* 완전한 정원 */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+}
+
+/* 화살표 */
+.arrow {
+  width: 11px; /* ✅ 가로 10px */
+  height: 11px; /* ✅ 세로 19px */
+  border-top: 2px solid #8F8F8F;
+  border-right: 2px solid #8F8F8F;
+  box-sizing: border-box;
+}
+
+/* 왼쪽 화살표 */
+.arrow.left {
+  transform: rotate(-135deg);
+  margin-left: 2px;
+}
+
+/* 오른쪽 화살표 */
+.arrow.right {
+  transform: rotate(45deg);
+  margin-right: 2px;
+}
+
+/* 버튼 비활성화 스타일 */
+.slider-btn:disabled .arrow-wrapper {
+  border-color: #D9D9D9;
+}
+.slider-btn:disabled .arrow {
+  border-top: 2px solid #D9D9D9;
+  border-right: 2px solid #D9D9D9;
+}
+
+/* 활성화 상태 hover 스타일 */
+.slider-btn:hover:not(:disabled) .arrow-wrapper {
+  border-color: #666666;
+}
+.slider-btn:hover:not(:disabled) .arrow {
+  border-top: 2px solid #666666;
+  border-right: 2px solid #666666;
+}
+
+/* ===========================================
+=                 반응형 대응                           =
+=========================================== */
+/* 반응형 대응 */
+@media (max-width: 960px) {
+  .reviews02-section {
+    padding-top: 0;
+    padding-right: 0; /* ✅ 우측 padding만 없애기 */
+    padding-bottom: 160px;
+    padding-left: clamp(100px, 16.6vw, 320px); /* ✅ 좌측은 유지 */
+  }
+
+  .review-card {
+    width: 400px;
+    height: 200px; /* ✅ 반응형에서도 높이 고정 */
+  }
+
+  .reviews02-buttons {
+    display: none;
+  }
+}

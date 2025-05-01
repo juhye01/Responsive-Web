@@ -1,0 +1,77 @@
+/*============================================================
+=                      전체 섹션 설정                           =
+============================================================*/
+.number-section {
+  background-color: var(--background-color-inverse, #171717);
+  padding: 160px clamp(100px, 16.6vw, 320px) 160px;
+  display: flex;
+  flex-direction: column;
+  gap: var(--gap-96px, 96px);
+  align-items: flex-start;
+  text-align: left;
+}
+
+
+/*============================================================
+=             숫자와 라벨을 담는 컨테이너 (NEW)                 =
+============================================================*/
+.number__content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between; /* 숫자 왼쪽 + 라벨 오른쪽 */
+  width: 100%;
+  max-width: 1480px; /* 오타 수정 */
+  position: relative; /* 라벨 위치 조정 위해 */
+}
+
+/*============================================================
+=                숫자 스타일                                   =
+============================================================*/
+.number__value {
+  font-size: 240px;
+  font-weight: 300;
+  color: var(--content-color-grey-6);
+  line-height: 1;
+  letter-spacing: -5px;
+  text-align: center;
+}
+
+.number__value span {
+  display: inline-block;
+  animation: fadeInUp 0.8s ease-out;
+}
+
+/*============================================================
+=                   애니메이션                                 =
+============================================================*/
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/*============================================================
+=                    반응형 설정                                =
+============================================================*/
+@media (max-width: 960px) {
+  /* 숫자 크기 줄이지 않음! */
+  .number__value {
+    font-size: 240px;
+    letter-spacing: -5px;
+  }
+
+  /* 숫자와 라벨 세로 정렬 */
+  .number__content {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .number__label {
+    margin-top: 32px; /* 숫자 밑으로 32px 띄우기 */
+  }
+}

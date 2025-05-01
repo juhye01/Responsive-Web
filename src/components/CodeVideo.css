@@ -1,0 +1,27 @@
+/* =======================================
+=           공통 비디오 스타일           =
+======================================= */
+.code-video {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  display: block;
+}
+
+/* ✅ brewin 코드용 (CodeVideo.jsx) */
+.video01 {
+  border-radius: 16px;
+}
+
+/* ✅ 기존 코드용 (CodeVideo02.jsx) */
+.video02 {
+  border-radius: 16px;
+}
+
+/* ✅ 감싸는 div 스타일 (부모 wrapper가 숨기면 영상 안 보임) */
+.code-video-wrapper {
+  width: 100%;
+  max-width: 720px;
+  height: auto;
+  display: block;
+}

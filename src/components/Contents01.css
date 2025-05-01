@@ -1,0 +1,94 @@
+/*============================================================
+=                Contents01 전체 섹션 레이아웃 설정               =
+============================================================*/
+.contents01 {
+  display: flex;
+  flex-direction: column;
+  gap: var(--gap-96px, 96px); /* 텍스트와 코드 박스 사이 간격 */
+  padding: 80px clamp(100px, 16.6vw, 320px) 160px; /* 상-좌우-하 여백 */
+  overflow-x: hidden;
+  box-sizing: border-box;
+  height: auto;
+  user-select: none;
+}
+
+
+/*============================================================
+=                    텍스트 소개 영역 설정                     =
+============================================================*/
+.text-area {
+  display: flex;
+  flex-direction: column;
+  gap: var(--gap-24px, 24px); /* 제목-본문 간 간격 */
+  text-align: left;
+}
+
+
+/*============================================================
+=                     코드 비교 영역 레이아웃                   =
+============================================================*/
+.code-compare {
+  display: flex;
+  flex-wrap: wrap; /* ✅ 반응형 대응 */
+  justify-content: center;
+  align-items: flex-start; /* 박스 상단 맞춤 */
+  gap: var(--gap-40px, 40px); /* 두 박스 사이 간격 */
+}
+
+
+/*============================================================
+=                        코드 박스 공통 스타일                  =
+============================================================*/
+.code-box {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  flex: 1 1 440px; /* 최소 440px, 남는 공간 유연하게 사용 */
+  max-width: 560px;
+  background-color: var(--clolr-brandcolor-2, #f9f9f9);
+  border-radius: var(--radius-16px, 16px);
+  padding: var(--gap-32px, 32px);
+  text-align: center;
+
+  /* ✅ 애니메이션 초기 상태 (숨겨짐) */
+  opacity: 0;
+  transform: translateY(60px);
+  transition: opacity 0.5s ease-out, transform 0.5s ease-out;
+}
+
+/* ✅ 스크롤 진입 시 등장 상태 */
+.code-box.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/*============================================================
+=                  순차 등장 위한 딜레이 설정                  =
+============================================================*/
+.box02 {
+  transition-delay: 0s; /* 먼저 등장 */
+}
+
+.box01 {
+  transition-delay: 0.6s; /* 살짝 나중에 등장 */
+}
+
+
+/*============================================================
+=                    박스별 추가 설정 (간격 등)                 =
+============================================================*/
+.box01 {
+  gap: 10px;
+}
+
+
+/*============================================================
+=                       비디오 컴포넌트 스타일                 =
+============================================================*/
+.code-video {
+  width: 100%;
+  height: auto;
+  max-height: 100%;
+  object-fit: contain;
+  border-radius: var(--radius-24px, 24px);
+}

@@ -1,22 +1,32 @@
 /*============================================================
 =                          기본 레이아웃                           =
 ============================================================*/
+/* 전역에서 막아주는 게 제일 확실함 */
+html, body {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+}
+
+
 .hero {
   position: relative;
   display: flex;
-  aspect-ratio: 1920 / 791;
   width: 100%;
-  max-height: 100vh;
+  min-height: 791px;
   background: transparent;
-  padding: clamp(100px, 16.6vw, 320px);
   align-items: center;
   overflow: visible;
   pointer-events: none;
+  padding: 160px clamp(100px, 16.6vw, 320px) 0px;
+  overflow-x: hidden;
+  overflow-y: hidden;
 }
+
 
 .hero__text-block {
   position: absolute;
-  top: 18%;
+  top: 22%;
   z-index: 2;
   display: flex;
   flex-direction: column;
@@ -31,6 +41,12 @@
   flex-direction: column;
   gap: var(--spacing-96px, 96px);
 }
+
+.hero-wrapper {
+  overflow: hidden;
+  position: relative;
+}
+
 
 /*============================================================
 =                             버튼 애니메이션                          =

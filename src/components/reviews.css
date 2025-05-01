@@ -1,0 +1,157 @@
+.reviews-section {
+  padding: 160px clamp(100px, 16.6vw, 320px) 160px;
+  text-align: left;
+}
+
+.reviews-title {
+  margin-bottom: var(--gap-96px);
+}
+.reviews-content {
+  max-width: 1480px;
+  width: 100%;
+  display: flex;
+  gap: 32px;
+  justify-content: flex-start; /* ✅ 왼쪽 정렬 */
+  align-items: flex-start;
+}
+
+.reviews-main-slide {
+  flex-shrink: 0;
+}
+
+.reviews-small-slides {
+  display: flex;
+  flex-direction: row;
+  gap: 16px;
+  align-items: flex-start;
+}
+
+/* 카드 스타일 */
+.review-slide {
+  position: relative;
+  border-radius: 16px;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: opacity 0.8s ease-in-out;
+}
+
+.review-slide img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  pointer-events: none;
+}
+
+.review-slide.big {
+  width: 872px; /* ✅ 사이즈 조정 */
+  height: 555px;
+}
+
+.review-slide.small {
+  width: 110px; /* ✅ 사이즈 조정 */
+  height: 555px;
+  cursor: pointer;
+}
+
+/* 작은 슬라이드 투명도 */
+.small-0 { opacity: 0.6; }
+.small-1 { opacity: 0.3; }
+.small-2 { opacity: 0.1; }
+
+/* 오버레이 */
+.review-slide__overlay {
+  position: absolute;
+  bottom: 50px;
+  left: 50px;
+  text-align: left;
+  z-index: 2;
+  opacity: 1;
+}
+
+.review-slide__title {
+  font-size: 24px;
+  font-weight: bold;
+  margin: 0;
+}
+
+.review-slide__desc {
+  font-size: 16px;
+  margin-top: 8px;
+}
+
+/* 페이드 아웃 */
+.review-slide.fade-out {
+  opacity: 0;
+}
+
+/* 반응형 */
+@media (max-width: 960px) {
+  .reviews-content {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .reviews-main-slide {
+    width: 100%;
+  }
+
+  .review-slide.big {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 920 / 555;
+  }
+
+  .reviews-small-slides {
+    flex-direction: column;
+    width: 100%;
+    margin-top: 16px;
+    gap: 8px;
+    align-items: center;
+  }
+
+  .review-slide.small {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 920 / 100;
+  }
+
+  .review-slide.small img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+}
+
+/* ========================
+=         점 (dots) 스타일          =
+========================= */
+
+.reviews-dots {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 24px;
+  gap: 8px;
+}
+
+.reviews-dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background-color: #ddd;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  padding: 0; /* ✅ 패딩 제거 */
+  box-sizing: content-box; /* ✅ width/height만 적용되게 */
+  display: block; /* ✅ 글자처럼 말고 블록처럼 딱 크기 잡기 */
+  appearance: none; /* ✅ 버튼 기본 스타일 제거 */
+}
+
+
+.reviews-dot.active {
+  background-color: #ff2d55; /* ✅ 활성 dot 색 (빨간색) */
+}
+

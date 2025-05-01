@@ -1,5 +1,13 @@
 /* Pretendard import */
 @import url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css');
+/* ============================================
+=         유틸리티 클래스 (폰트 전용)             =
+============================================ */
+.font-helvetica {
+  font-family: 'Helvetica', 'Arial', sans-serif;
+}
+
+
 
 body {
   font-family: 'Pretendard', sans-serif;
@@ -9,7 +17,14 @@ body {
 /* 변수 정의 */
 :root {
   /* 컬러 내용 */
+  --content-color-grey-1: #171717;
+  --content-color-grey-2: #555555;
   --content-color-grey-3: #767676;
+  --content-color-grey-4: #8F8F8F;
+  --content-color-grey-5: #AEAEAE;
+  --content-color-grey-6: #D9D9D9;
+  --content-color-grey-7: #ECECEC;
+  --content-color-grey-8: #ffffff;
   
 
   /* 컬러 배경 */
@@ -51,6 +66,12 @@ body {
   --radius-full: 9999px;
 }
 
+
+
+
+
+/*///////////////////////////////////////////////////////////////////////////////*/
+
 /* 텍스트 스타일 클래스는 :root 바깥에! */
 .text-display-1 {
   font-size: 80px;
@@ -72,6 +93,15 @@ body {
 
 }
 
+.text-display-3 {
+  font-size: 48px;
+  font-weight: 700;
+  line-height: 1.4;
+  letter-spacing: -0.01em;
+  text-decoration: none;
+  margin: 0px;
+
+}
 .text-display-4 {
   font-size: 64px;
   font-weight: 700;
@@ -82,6 +112,55 @@ body {
   margin: 0px;
 
 }
+
+
+/*///////////////////////////////////////////////////////*/
+
+.text-heading-0 {
+  font-size: 32px;
+  font-weight: 400;
+  line-height: 1.5;
+  letter-spacing: -0.01em;
+  text-decoration: none;
+  text-align: left;
+  color: var(--content-color-grey-3, #767676);
+  margin: 0px;
+}
+
+.text-heading-1 {
+  font-size: 32px;
+  font-weight: 600;
+  line-height: 1.5;
+  letter-spacing: -0.01em;
+  text-decoration: none;
+  text-align: left;
+  color: var(--content-color-grey-3, #767676);
+  margin: 0px;
+}
+
+.text-heading-2 {
+  font-size: 24px;
+  font-weight: 600;
+  line-height: 1.5;
+  letter-spacing: -0.01em;
+  text-decoration: none;
+  text-align: left;
+  color: var(--content-color-grey-3, #767676);
+  margin: 0px;
+}
+
+
+.text-heading-3 {
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 1.5;
+  letter-spacing: -0.01em;
+  text-decoration: none;
+  text-align: left;
+  margin: 0px;
+
+}
+
 
 
 .text-heading-4 {
@@ -107,6 +186,79 @@ body {
 }
 
 
+
+/*///////////////////////////////////////////////////////*/
+
+.text-body-1 {
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 1.5;
+  letter-spacing: -0.01em;
+  text-decoration: none;
+  text-align: left;
+  margin: 0px;
+
+}
+
+.text-body-2 {
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 1.5;
+  letter-spacing: -0.01em;
+  text-decoration: none;
+  text-align: left;
+  margin: 0px;
+
+}
+
+.text-body-3 {
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 1.5;
+  letter-spacing: -0.01em;
+  text-decoration: none;
+  text-align: left;
+  margin: 0px;
+
+}
+
+.text-body-4 {
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.5;
+  letter-spacing: -0.01em;
+  text-decoration: none;
+  text-align: left;
+  margin: 0px;
+
+}
+
+.text-body-5 {
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 1.5;
+  letter-spacing: -0.01em;
+  text-decoration: none;
+  text-align: left;
+  margin: 0px;
+
+}
+
+
+.text-body-6 {
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.5;
+  letter-spacing: -0.01em;
+  text-decoration: none;
+  text-align: left;
+  margin: 0px;
+
+}
+
+/*//////////////////////////////////////////////*/
+
+
 .button{
   display: inline-flex; /* 텍스트 + 아이콘 나란히 정렬 */
   gap: 8px; /* 텍스트와 아이콘 사이 간격 */
@@ -125,4 +277,43 @@ body {
   margin: 0px;
   height: 64px;
   width: 161px;
+}
+
+
+
+
+
+
+/*///////////////////////////////////////*/
+.content-color-grey-6{
+  color: var(--content-color-grey-6, #dcdcdc);
+}
+.content-color-grey-5{
+  color: var(--content-color-grey-5, #b0b0b0);
+}
+.content-color-grey-4{
+  color: var(--content-color-grey-4, #8F8F8F);
+}
+.content-color-grey-3{
+  color: var(--content-color-grey-3, #767676);
+}
+.content-color-grey-2{
+  color: var(--content-color-grey-2, #555555);
+}
+.content-color-grey-1{
+  color: var(--content-color-grey-1, #171717);
+}
+.content-color-grey-7{
+  color: var(--content-color-grey-7, #ECECEC);
+}
+.content-color-grey-8{
+  color: var(--content-color-grey-8, #ffffff);
+}
+
+
+/*//////////////////////////////////////*/
+
+
+.content-color-brand{
+  color: var(--color-brandcolor, #E60023);
 }
