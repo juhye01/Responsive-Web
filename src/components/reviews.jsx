@@ -101,10 +101,10 @@ const Reviews = () => {
               >
                 <img src={slide.src} alt={`Main Slide`} />
                 <div className="review-slide__overlay">
-                  <h3 className="review-slide__title text-heading-2 content-color-grey-1">
+                  <h3 className="review-slide__title text-heading-1 content-color-grey-1">
                     {slide.title}
                   </h3>
-                  <p className="review-slide__desc text-body-2 content-color-grey-3">
+                  <p className="review-slide__desc text-body-0 content-color-grey-1">
                     {slide.description}
                   </p>
                 </div>

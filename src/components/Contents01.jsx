@@ -37,11 +37,11 @@ const Contents01 = () => {
 
       <div className="code-compare">
         <div className="code-box box01">
-          <p className="code-box-label text-body-2">타사 코드</p>
+          <p className="code-box-label text-body-6 content-color-grey-4">&lt;타사 코드&gt;</p>
           <CodeVideo02 />
         </div>
         <div className="code-box box02">
-          <p className="code-box-label text-body-6 content-color-grey-5">brewin 코드</p>
+          <p className="code-box-label text-body-6 content-color-grey-4">&lt;brewin 코드&gt;</p>
           <CodeVideo />
         </div>
       </div>

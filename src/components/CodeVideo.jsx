@@ -9,7 +9,6 @@ const CodeVideo = () => {
       src={`${process.env.PUBLIC_URL}/videos/brewin_code.mp4`}
       autoPlay
       muted
-      loop
       playsInline
       preload="auto"
     >
